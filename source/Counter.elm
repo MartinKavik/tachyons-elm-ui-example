@@ -93,7 +93,7 @@ view model =
     |> Ti.Button.setText "- Decrement"
     |> Ti.Button.view Decrement
 , Ti.Button.model "btn-decrement"
-    |> Ti.addClasses [ mt2 ]     -- maring-top
+    |> Ti.addClasses [ mt2 ]     -- margin-top
     |> Ti.Button.setText "+ Increment"
     |> Ti.Button.view Increment
 ]"""
