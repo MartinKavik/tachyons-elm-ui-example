@@ -1,0 +1,21 @@
+image: alpine
+
+before_script:
+  - apk update
+  - apk add openssh
+  - apk add git
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan -H 'host.abrigo.cz' >> ~/.ssh/known_hosts
+
+stages:
+  - deploy
+
+deploy_production:
+  only:
+    - master
+  stage: deploy
+  script:
+    - git config http.postBuffer 524288000
+    - git push dokku@host.abrigo.cz:tachyons-elm-ui-example HEAD:refs/heads/master
