@@ -65,7 +65,7 @@ view model =
         [ article [ class ma4 ]
             [ Html.h1 [] [ text "Counter" ]
             , p []
-                [ span [] [ text "This is an minimal project to get you started with" ]
+                [ span [] [ text "This was an minimal project to get you started with" ]
                 , span [ classes [ Tachyons.b, mh1 ] ] [ text "elm-dev-env" ]
                 , span [] [ text "!" ]
                 ]
